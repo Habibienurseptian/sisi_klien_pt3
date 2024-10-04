@@ -46,6 +46,7 @@ const dataMahasiswa = [
         aktif: false,
         organisasi: ["Himpunan Mahasiswa Tenik Sipil"],
     },
+
 ];
 
 //CATATAN PENTING
@@ -114,3 +115,28 @@ const totalNilai = dataMahasiswa.reduce((sum, mhs) => {
 }, 0);
 
 console.log("Total Nilai Mahasiswa : " + totalNilai);
+
+
+const newMahasiswa = {
+    id: 4,
+    nama: "Fufufafa",
+    tanggalLahir: "2001-02-02",
+    fakultas: "Fakultas Teknik",
+    programStudi: "Teknik Electro",
+    semester: 3,
+    nilai:{
+        mekanikTanah: 87,
+        strukturBangunan: 90,
+    },
+
+    aktif: true,
+    organisasi: ["Himpunan Mahasiswa Tenik Sipil"],
+};
+const dataMahasiswaUpdate = [...dataMahasiswa, newMahasiswa];
+//delate
+const dataMahasiswaAfterDelate = dataMahasiswaAfterUpdate.filter((mhs) => mhs.id !==2);
+console.log(dataMahasiswaAfterDelate);
+
+//update
+const dataMahasiswaAfterUpdate = dataMahasiswaAfterDelate.map((mhs) => mhs.id == 1?{
+    ...mhs, semester: 7} : mhs);
